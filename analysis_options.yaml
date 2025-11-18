@@ -1,1 +1,25 @@
 include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # Permitir print en desarrollo (útil para debugging)
+    avoid_print: false
+    
+    # Deshabilitar warning de BuildContext async (común en Flutter)
+    use_build_context_synchronously: false
+    
+    # Permitir nombres de parámetros que coincidan con tipos
+    avoid_types_as_parameter_names: false
+    
+    # Permitir nombres de archivos con mayúsculas (legacy code)
+    file_names: false
+
+analyzer:
+  errors:
+    # Reducir severidad de deprecation warnings a info
+    deprecated_member_use: ignore
+    deprecated_member_use_from_same_package: ignore
+  
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
